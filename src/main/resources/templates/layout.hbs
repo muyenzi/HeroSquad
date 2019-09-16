@@ -4,19 +4,30 @@
    <title>{{#block "title"}} SQUADS {{/block}}</title>
 
    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<!--    <style>-->
+<!--        body {-->
+<!--        background-image:url("http://cdn.collider.com/wp-content/uploads/2011/01/x-men-first-class-cast-large-01.jpg");-->
+<!--        background-repeat:no-repeat;-->
+<!--        background-size: cover;-->
+<!--        color:white;-->
+
+<!--        }-->
+<!--        .well {-->
+<!--        background-color:white;-->
+<!--        color:black;-->
+<!--        margin-top:20%;-->
+<!--        }-->
+
+<!--    </style>-->
 </head>
 <body>
 <ul class="nav nav-tabs">
    <li role="presentation" class="active"><a href="#">Home</a></li>
-   <li role="presentation"><a href="/posts">See All Squads</a></li>
-   <li role="presentation"><a href="/posts/new">Add a New Squad</a></li>
+   <li role="presentation"><a href="/squads">Squads List</a></li>
+   <li role="presentation"><a href="/new">Create Squad</a></li>
+    <li role="presentation"><a href="/new-hero">Add Hero</a></li>
 </ul>
 <div class="container">
-   <!--begin main template-->
-   <div class="page-header">
-       <img src="/images/caspar-rubin-224229.jpg" width="70%">
-       <h1>. <small>A journey into code!</small></h1>
-   </div>
 
    <div class="col-md-12">
        {{#block "content"}}
