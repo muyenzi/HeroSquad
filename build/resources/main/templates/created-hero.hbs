@@ -1,9 +1,20 @@
 {{# partial "content"}}
-<h2>Great!</h2>
-<h3>Your Hero has been Added!</h3>
-<br>
-<h4><a href="/squads"> View All Heros</a></h4>
-
+    <h1 style="color:black">HERO SQUAD APP </h1>
+    <div class="well">
+        <center>
+            <h3 style="color:blue"><em>Congrats!!!!</em></h3>
+            <p>Your Hero has been assigned!!!</p>
+            <br>
+            <h4>Created Hero Info </h4><br>
+            <p>Hero Name : {{ heroName }} </p>
+            <p>Hero Age : {{ ages }} </p>
+            <p>Hero Power : {{ power }} </p>
+            <p>Hero Weakness : {{ weak }} </p>
+            <a href="/heroes"><button> Heroes List</button></a>
+            <button ><a href="/new"> Add a Squad</a></button>
+            <button><a href="/new-hero"> Add a new  Hero</a></button>
+        </center>
+    </div>
 
 {{/partial}}
 {{> layout.hbs}}

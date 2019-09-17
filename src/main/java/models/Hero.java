@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Hero{
     private String mName;
-    private String mAge;
+    private int mAge;
     private String mStrength;
     private String mWeakness;
     private int mId;
     private static ArrayList<Hero> instances = new ArrayList<Hero>();
 
-    public Hero(String name, String age, String strength, String weakness){
+    public Hero(String name, int age, String strength, String weakness){
         mName = name;
         mAge = age;
         mStrength= strength;
@@ -31,7 +31,7 @@ public class Hero{
         return mName;
     }
 
-    public String getAge(){
+    public int getAge(){
         return mAge;
     }
 

@@ -63,17 +63,7 @@ public class App {
                 return new ModelAndView(model, "created-squad.hbs");
             }, new HandlebarsTemplateEngine());
 
-//            get("/created", (request, response) -> { //URL to make new post on POST route
-//                Map<String, Object> model = new HashMap<>();
-//                String description = request.queryParams("description");
-//                String squadName = request.queryParams("squadName");
-////                model.put("squad", squadName);
-//////                model.put("squad", description);
-//                Squad newSquad = new Squad(squadName, description);
-//                return new ModelAndView(model, "index.hbs");
-//            }, new HandlebarsTemplateEngine());
-//
-//            //get: show all posts
+//            //get: show all squads
             get("/squads", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
                 List<Squad> squads = Squad.all();
@@ -92,30 +82,36 @@ public class App {
             //route that makes new hero
             get("/created-hero", (request, response) -> { //URL to make new post on POST route
                 Map<String, Object> model = new HashMap<>();
-                String name = request.queryParams("name");
-                String age = request.queryParams("age");
-                String strength = request.queryParams("strength");
-                String weakness = request.queryParams("weakness");
+                String name = request.queryParams("heroName");
+                int age=Integer.parseInt(request.queryParams("ages"));
+                String strength = request.queryParams("power");
+                String weakness = request.queryParams("weak");
                 Hero newHero = new Hero(name, age, strength, weakness);
+                model.put("heroes", newHero);
+
                 return new ModelAndView(model, "created-hero.hbs");
             }, new HandlebarsTemplateEngine());
 
             post("/created-hero", (request, response) -> { //URL to make new post on POST route
                 Map<String, Object> model = new HashMap<>();
 
-                String name = request.queryParams("name");
-                String age = request.queryParams("age");
-                String strength = request.queryParams("strength");
-                String weakness = request.queryParams("weakness");
-//                model.put("squad", squadName);
-//                model.put("squad", description);
+                String name = request.queryParams("heroName");
+                int age =Integer.parseInt (request.queryParams("ages"));
+                String strength = request.queryParams("power");
+                String weakness = request.queryParams("weak");
                 Hero newHero = new Hero(name, age, strength, weakness);
+                model.put("heroes", newHero);
+                model.put("heroName",newHero.getName());
+                model.put("ages",newHero.getAge());
+                model.put("power",newHero.getStrength());
+                model.put("weak",newHero.getWeakness());
+                System.out.println(newHero.getName());
+                System.out.println(newHero.getAge());
                 return new ModelAndView(model, "created-hero.hbs");
             }, new HandlebarsTemplateEngine());
-//
-//
-//            //get: show all posts
-            get("/heros", (req, res) -> {
+
+//            //get: show all heroes
+            get("/heroes", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
                 List<Hero> heroes = Hero.all();
                 model.put("hero", heroes);

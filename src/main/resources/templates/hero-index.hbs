@@ -1,0 +1,16 @@
+{{#partial "content"}}
+
+    <h1 style="color:black">HERO SQUAD APP </h1>
+    <p>Current Heroes:</p>
+    {{#if Heroes}}
+        {{#each Heroes }}
+
+            <p>{{ heroName }} </p>
+
+        {{/each}}
+    {{else}}
+        <p>not working!!!!!!!!!!!!!!!!!!!!!!</p>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}
