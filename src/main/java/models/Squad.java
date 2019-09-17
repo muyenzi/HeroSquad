@@ -5,23 +5,24 @@ import java.util.ArrayList;
 public class Squad {
     private String mName;
     private String mDescription;
+    private int mNumber;
     private static List<Squad> instances = new ArrayList<Squad>();
     private int mId;
     private List<Hero> mHeroes;
     private boolean published; //i’m new
 
-    public Squad(String name, String description) {
+
+
+    public Squad(String name, String description, int number) {
         mName = name;
         mDescription = description;
+        mNumber=number;
         instances.add(this);
         mId = instances.size();
         mHeroes = new ArrayList<Hero>();
         this.published = false; //also new
     }
 
-//    public static List<Squad> tout(){
-//        return instances;
-//    }
 
     public List<Hero> getHeroes(){
         return mHeroes;
@@ -33,6 +34,9 @@ public class Squad {
 
     public String getDescription(){
         return mDescription;
+    }
+    public int getmNumber() {
+        return mNumber;
     }
 
     public static List<Squad> all(){
@@ -54,6 +58,8 @@ public class Squad {
     public boolean getPublished(){ //new too
         return this.published;
     }
+
+
 
     public void addHero(Hero hero){
         if(mHeroes.size() < 4) {

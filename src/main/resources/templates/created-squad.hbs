@@ -1,9 +1,18 @@
 {{# partial "content"}}
-<h2>Great!</h2>
-<h3>Your squad has been saved!</h3>
+
+      <div class="well">
+          <center>
+  <h3><em>Congrats!!!!</em></h3>
+<p>Your squad has been saved!</p>
 <br>
+<h>Created Squad Info :</h><br>
+<p>Squad Name : {{ name }} </p>
+<p>Squad Description : {{description }} </p>
+<p>Squad Size : {{ size }} </p>
 <a href="/squads"><button> View Squad List</button></a>
-<button><a href="/created-hero"> Add a Hero</a></button>
+<button><a href="hero-form"> Add a Hero</a></button>
+          </center>
+   </div>
 
 {{/partial}}
 {{> layout.hbs}}

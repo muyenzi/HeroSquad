@@ -1,27 +1,15 @@
 {{#partial "content"}}
 
-    <h1>Add a new Squad!</h1>
 
+    <p>Current squads:</p>
     {{#if squads}}
         {{#each squads }}
-            <p>Current squads:</p>
-            <p>{{squad.squadName }} </p>
-            <p>{{ description }} </p>
-            <p>{{ size }} </p>
+
+            <p>{{ name }} </p>
+
         {{/each}}
     {{else}}
-
-    {{/if}}
-    {{#if heros}}
-        {{#each heroes }}
-            <p>heroes:</p>
-            <p>{{hero.heroName}} </p>
-            <p>{{hero.age}} </p>
-            <p>{{hero.strength }} </p>
-            <p>{{ hero.weakness }} </p>
-        {{/each}}
-    {{else}}
-
+<p>not working!!!!!!!!!!!!!!!!!!!!!!</p>
     {{/if}}
 {{/partial}}
 

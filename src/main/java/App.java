@@ -19,7 +19,7 @@ public class App {
                 Map<String, Object> model = new HashMap<>();
                 ArrayList<Squad> squads  = (ArrayList<Squad>) Squad.all();
                 model.put("squads",squads );
-                return new ModelAndView(model, "index.hbs");
+                return new ModelAndView(model, "welcome.hbs");
             }, new HandlebarsTemplateEngine());
 
 
@@ -41,24 +41,37 @@ public class App {
 //            //route that makes new squad
             get("/created-squad", (request, response) -> { //URL to make new post on POST route
                 Map<String, Object> model = new HashMap<>();
-                String description = request.queryParams("description");
                 String squadName = request.queryParams("squadName");
-//                model.put("squad", squadName);
-////                model.put("squad", description);
-                Squad newSquad = new Squad(squadName, description);
+                String description = request.queryParams("description");
+                int maxsize=Integer.parseInt(request.queryParams("size"));
+                Squad newSquad = new Squad(squadName, description,maxsize);
+                model.put("squad", newSquad);
                 return new ModelAndView(model, "created-squad.hbs");
             }, new HandlebarsTemplateEngine());
 
             post("/created-squad", (request, response) -> { //URL to make new post on POST route
                 Map<String, Object> model = new HashMap<>();
-                String description = request.queryParams("description");
                 String squadName = request.queryParams("squadName");
-//                model.put("squad", squadName);
-//                model.put("squad", description);
-                Squad newSquad = new Squad(squadName, description);
+                String description = request.queryParams("description");
+                int size=Integer.parseInt(request.queryParams("size"));
+                Squad newSquad = new Squad(squadName, description,size);
+                model.put("squads",newSquad);
+                model.put("name",newSquad.getName());
+                model.put("description",newSquad.getDescription());
+                model.put("size",newSquad.getmNumber());
+                System.out.println(newSquad.getmNumber());
                 return new ModelAndView(model, "created-squad.hbs");
             }, new HandlebarsTemplateEngine());
-//
+
+//            get("/created", (request, response) -> { //URL to make new post on POST route
+//                Map<String, Object> model = new HashMap<>();
+//                String description = request.queryParams("description");
+//                String squadName = request.queryParams("squadName");
+////                model.put("squad", squadName);
+//////                model.put("squad", description);
+//                Squad newSquad = new Squad(squadName, description);
+//                return new ModelAndView(model, "index.hbs");
+//            }, new HandlebarsTemplateEngine());
 //
 //            //get: show all posts
             get("/squads", (req, res) -> {
