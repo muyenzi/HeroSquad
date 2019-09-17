@@ -83,8 +83,6 @@ public class App {
                 String age = request.queryParams("age");
                 String strength = request.queryParams("strength");
                 String weakness = request.queryParams("weakness");
-//                model.put("squad", squadName);
-//                model.put("squad", description);
                 Hero newHero = new Hero(name, age, strength, weakness);
                 return new ModelAndView(model, "created-hero.hbs");
             }, new HandlebarsTemplateEngine());
@@ -106,9 +104,8 @@ public class App {
 //            //get: show all posts
             get("/heros", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
-                List<Hero> heros = Hero
-                        .all();
-                model.put("hero", heros);
+                List<Hero> heroes = Hero.all();
+                model.put("hero", heroes);
 
                 return new ModelAndView(model, "index.hbs");
             }, new HandlebarsTemplateEngine());

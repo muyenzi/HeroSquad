@@ -5,23 +5,23 @@
     {{#if squads}}
         {{#each squads }}
             <p>Current squads:</p>
-            <p>{{ squadName }} </p>
+            <p>{{squad.squadName }} </p>
             <p>{{ description }} </p>
             <p>{{ size }} </p>
         {{/each}}
     {{else}}
-        <p>No squads!</p>
+
     {{/if}}
     {{#if heros}}
-        {{#each heros }}
-            <p>Current heros:</p>
-            <p>{{heroName}} </p>
-            <p>{{ age}} </p>
-            <p>{{ strength }} </p>
-            <p>{{ weakness }} </p>
+        {{#each heroes }}
+            <p>heroes:</p>
+            <p>{{hero.heroName}} </p>
+            <p>{{hero.age}} </p>
+            <p>{{hero.strength }} </p>
+            <p>{{ hero.weakness }} </p>
         {{/each}}
     {{else}}
-        <p>No Heros!</p>
+
     {{/if}}
 {{/partial}}
 
