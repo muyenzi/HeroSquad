@@ -21,7 +21,7 @@
 
 ### APPLICATION USE
 
-HERO SQUAD APP is an app that creates 
+HERO SQUAD APP is an app that creates a squad then assign a hero to that squad , specify the minimum number of people that can join that squad and the cause of that squad. 
 
 
 ### SETUP INSTALLATION REQUIRED
