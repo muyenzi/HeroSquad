@@ -1,7 +1,5 @@
 
-//import org.junit.*;
-//import static org.junit.Assert.*;
-//
+
 //public class SquadTest {
 //    @Test
 //    public void getPublished_isFalseAfterInstantiation_false() throws Exception {
