@@ -9,7 +9,7 @@ public class Squad {
     private static List<Squad> instances = new ArrayList<Squad>();
     private int mId;
     private List<Hero> mHeroes;
-    private boolean published; //i’m new
+    private boolean published;
 
 
 
