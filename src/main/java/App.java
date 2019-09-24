@@ -23,23 +23,23 @@ public class App {
             }, new HandlebarsTemplateEngine());
 
 
-            //get: show new post form
+            //get: show squad form
             get("/new", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
                 return new ModelAndView(model, "form.hbs");
             }, new HandlebarsTemplateEngine());
 
-            get("/posts/:id", (req, res) -> {
+            get("/squads/:id", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
-                int idOfPostToFind = Integer.parseInt(req.params(":id")); //pull id - must match route segment
-                Squad foundPost = Squad.find(idOfPostToFind); //use it to find post
-                model.put("squad", foundPost); //add it to model for template to display
-                return new ModelAndView(model, "squad-detail.hbs"); //individual post page.
+                int idOfSquadToFind = Integer.parseInt(req.params(":id")); //pull id - must match route segment
+                Squad foundSquad = Squad.find(idOfSquadToFind ); //use it to find squad
+                model.put("squad", foundSquad ); //add it to model for template to display
+                return new ModelAndView(model, "squad-detail.hbs");
             }, new HandlebarsTemplateEngine());
 
 
 //            //route that makes new squad
-            get("/created-squad", (request, response) -> { //URL to make new post on POST route
+            get("/created-squad", (request, response) -> {
                 Map<String, Object> model = new HashMap<>();
                 String squadName = request.queryParams("squadName");
                 String description = request.queryParams("description");
@@ -49,7 +49,7 @@ public class App {
                 return new ModelAndView(model, "created-squad.hbs");
             }, new HandlebarsTemplateEngine());
 
-            post("/created-squad", (request, response) -> { //URL to make new post on POST route
+            post("/created-squad", (request, response) -> {
                 Map<String, Object> model = new HashMap<>();
                 String squadName = request.queryParams("squadName");
                 String description = request.queryParams("description");
@@ -80,7 +80,7 @@ public class App {
             }, new HandlebarsTemplateEngine());
 
             //route that makes new hero
-            get("/created-hero", (request, response) -> { //URL to make new post on POST route
+            get("/created-hero", (request, response) -> {
                 Map<String, Object> model = new HashMap<>();
                 String name = request.queryParams("heroName");
                 int age=Integer.parseInt(request.queryParams("ages"));
@@ -92,7 +92,7 @@ public class App {
                 return new ModelAndView(model, "created-hero.hbs");
             }, new HandlebarsTemplateEngine());
 
-            post("/created-hero", (request, response) -> { //URL to make new post on POST route
+            post("/created-hero", (request, response) -> {
                 Map<String, Object> model = new HashMap<>();
 
                 String name = request.queryParams("heroName");

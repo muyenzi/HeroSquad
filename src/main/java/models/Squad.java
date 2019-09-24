@@ -35,6 +35,7 @@ public class Squad {
     public String getDescription(){
         return mDescription;
     }
+
     public int getmNumber() {
         return mNumber;
     }
