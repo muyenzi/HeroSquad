@@ -1,26 +1,20 @@
 <head>
     <title>{{#block "title"}} SQUADS {{/block}}</title>
-
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
 </head>
 {{#partial "content"}}
-
     <h1>Add a new Squad!</h1>
-
     <form action="/created-squad" method="post" class="well">
         <label for="squadName">Squad Name</label><br>
         <input id="squadName" name="squadName" type="text" class="input-field">
         <br>
-
         <label for="description">Squad Cause</label><br>
         <input id="description" name="description" type="text" class="input-field">
         <br>
-
         <label for="size">Number of People</label><br>
         <input id="size" name="size" type="text" class="input-field">
         <br><br>
         <button type="submit" class="btn btn-primary">Add New Squad</button>
     </form>
 {{/partial}}
-
 {{> layout.hbs}}
